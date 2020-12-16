@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/sy" android:icon="@mipmap/sy" android:title="首页"/>
+    <item android:id="@+id/qbfw" android:icon="@mipmap/qbfw" android:title="全部服务"/>
+    <item android:id="@+id/zhdj" android:icon="@mipmap/zhjd" android:title="智慧党建"/>
+    <item android:id="@+id/xw" android:icon="@mipmap/xw" android:title="新闻"/>
+    <item android:id="@+id/grzx" android:icon="@mipmap/grzx" android:title="个人中心"/>
+
+</menu>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#09151F"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:background="@drawable/sousuo_bg"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/sousuo"
+                android:layout_marginLeft="10sp"/>
+
+            <EditText
+                android:id="@+id/etx_ss"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#FDFDFE"
+                android:hint="搜索"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:background="@null"
+                android:paddingLeft="5dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/sou_suo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:text="搜索"
+            android:background="@drawable/bai_yuan_dian"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#D1D1D4"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/sz"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textSize="16sp"
+            android:textColor="#FDFDFE"
+            android:background="@drawable/sy_btn_bg"
+            android:text="时政"/>
+
+        <Button
+            android:id="@+id/yq"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textSize="16sp"
+            android:textColor="#FDFDFE"
+            android:background="@drawable/sy_btn_bg"
+            android:text="疫情"
+            android:layout_marginLeft="30dp"/>
+
+        <Button
+            android:id="@+id/yl"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textSize="16sp"
+            android:textColor="#FDFDFE"
+            android:background="@drawable/sy_btn_bg"
+            android:text="娱乐"
+            android:layout_marginLeft="30dp"/>
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="230dp" />
+
+    <GridView
+        android:id="@+id/grid_view1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:numColumns="5"
+        android:verticalSpacing="10dp"
+        android:paddingTop="10dp"/>
+
+    <GridView
+        android:id="@+id/grid_view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:numColumns="2"
+        android:paddingTop="20dp"
+        android:verticalSpacing="20dp"/>
+
+</LinearLayout>
