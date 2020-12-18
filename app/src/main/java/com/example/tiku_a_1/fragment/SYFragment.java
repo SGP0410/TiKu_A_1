@@ -219,6 +219,8 @@ public class SYFragment extends Fragment implements View.OnClickListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (services.get(position).getServiceName().equals("更多服务")) {
                     homeActivity.setFragment(GengDuoFuWuFragment.newInstance(serviceList));
+                }else {
+                    homeActivity.setFragment(WebViewFragment.newInstance(services.get(position).getUrl() , "SY"));
                 }
             }
         });
@@ -295,7 +297,6 @@ public class SYFragment extends Fragment implements View.OnClickListener {
             }
         }
     }
-
 
     @Override
     public void onHiddenChanged(boolean hidden) {

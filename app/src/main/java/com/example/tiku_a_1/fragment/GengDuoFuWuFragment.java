@@ -1,9 +1,11 @@
 package com.example.tiku_a_1.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -28,8 +30,8 @@ public class GengDuoFuWuFragment extends Fragment {
     public static GengDuoFuWuFragment newInstance(List<Service> services) {
         if (fuWuFragment == null) {
             fuWuFragment = new GengDuoFuWuFragment();
+            fuWuFragment.services = services;
         }
-        fuWuFragment.services = services;
         return fuWuFragment;
     }
 
@@ -48,12 +50,23 @@ public class GengDuoFuWuFragment extends Fragment {
     }
 
     private void showGridView() {
-        gridView.setAdapter(new FuWuRuKouGridViewAdapter(getContext() , services));
+        gridView.setAdapter(new FuWuRuKouGridViewAdapter(getActivity(), services));
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (services.get(position).getServiceName().equals("地铁查询")){
+                    ((HomeActivity) getActivity()).setFragment(DiTieChaXunFragment.newInstance());
+                }else {
+                    ((HomeActivity) getActivity()).setFragment(WebViewFragment.
+                            newInstance(services.get(position).getUrl(), "GDFW"));
+                }
+            }
+        });
     }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
-        if (!hidden){
+        if (!hidden) {
             ((HomeActivity) getActivity()).showBottomNavigationView(false);
         }
     }
